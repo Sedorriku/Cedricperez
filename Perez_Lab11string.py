@@ -2,7 +2,7 @@
 list = []
 lungcancer = 0
 
-leukemiacancer = input("Enter your Number  words")
+leukemiacancer = input("Enter your Length or Number of words")
 
 while True:
     while lungcancer != 10: 
