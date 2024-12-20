@@ -1,9 +1,10 @@
-#listahan ng mga masasarap na pagkains
+#listahan ng mga pagkains
 Bakasyonna = {
 1: "Food",
 2: "Drinks",
 3: "Desserts"
 }
+
 Sarap = {
 "Food": {
 1: ("Chicken", 90),
@@ -25,14 +26,23 @@ Sarap = {
 13: ("Peach Apple pie", 60),
 14: ("Hotdog", 65),
 15: ("ICe_Cream", 35),
-
 },
 }
+#using functionnnnnn n displaying and choosing the categoriesszz
+def display_categories():
+    print("Choose a Category:")
+    for toilet, skibidi in Bakasyonna.items():
+        print(f"{toilet} {skibidi}")
+
+def display_items(category):
+    print(f"The Food Available in {category} are:")
+    for testvar, (name, price) in Sarap[category].items():
+        print(f"{testvar} {name} - ₱{price:.2f}")
+
 print("Welcome to The Delicious Food Ordering System")
 
-print("Choose a category:")
-for toilet, skibidi in Bakasyonna.items():
-    print(f"{toilet}. {skibidi}")
+display_categories()
+
 while True:
     try:
         sleepy = int(input("\nEnter the number of your chosen category: "))
@@ -44,21 +54,21 @@ while True:
             print("Invalid choice. Please select a valid category that we showed")
     except ValueError:
         print("Invalid input. Please enter a number within 1, 2 or 3.")
-print(f"The Food Available in {tamaba} are:")
-for testvar, (name, price) in Sarap[tamaba].items():
-    print(f"{testvar}. {name} - ₱{price:.2f}")
+
+display_items(tamaba)
 
 while True:
     try:
         itemchoice = int(input("\nEnter the item number you want to order: "))
         if itemchoice in Sarap[tamaba]:
             productname, productprice = Sarap[tamaba][itemchoice]
-            print(f"\nThe Producted You Selected is: {productname} With The Price of ₱{productprice:.2f}")
+            print(f"\nThe Product You Selected is: {productname} With The Price of ₱{productprice:.2f}")
             break
         else:
             print("Invalid choice. Please select a valid Food from the provided menu.")
     except ValueError:
         print("Invalid input. Please enter a number only.")
+
 while True:
     try:
         money = float(input(f"The Total Food Payment is ₱{productprice:.2f}. Enter Your Payment Amount: ₱"))
@@ -71,4 +81,4 @@ while True:
     except ValueError:
         print("Invalid input. Please enter a valid amount of cash.")
 
-print("\nThank You For Ordering Our Valued Customern")
+print("\nThank You For Ordering Our Valued Customer")
